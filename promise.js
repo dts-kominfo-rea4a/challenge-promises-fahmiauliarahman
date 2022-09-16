@@ -12,7 +12,8 @@ const promiseOutput = (emosi) => {
     .then(
       (res) => (counter += res.filter((item) => item.hasil === emosi).length)
     )
-    .then(() => counter);
+    .then(() => counter)
+    .catch((err) => err);
 };
 
 module.exports = {
