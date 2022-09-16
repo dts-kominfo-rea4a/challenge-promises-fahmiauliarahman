@@ -8,11 +8,11 @@ const promiseOutput = (emosi) => {
     .then(
       (res) => (counter += res.filter((item) => item.hasil === emosi).length)
     )
-    .then(() => {
-      return promiseTheaterVGC().then(
-        (res) => (counter += res.filter((item) => item.hasil === emosi).length)
-      );
-    });
+    .then(() => promiseTheaterVGC())
+    .then(
+      (res) => (counter += res.filter((item) => item.hasil === emosi).length)
+    )
+    .then(() => counter);
 };
 
 module.exports = {
